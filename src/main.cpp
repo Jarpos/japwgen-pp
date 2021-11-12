@@ -24,5 +24,11 @@ int main(int argc, char const* argv[])
 
 void PrintHelp()
 {
-    std::printf("Usage: japwgen-pp [ OPTIONS ]");
+    std::printf("Usage: japwgen-pp [ OPTIONS ] [ pwlen ] [ pwcount]\n");
+    std::printf("\n");
+    std::printf("Options:\n");
+    std::printf("\t-h or --help\n");
+    std::printf("\t    Displays this message\n");
+    std::printf("\t--alphabet=\"[ ALPHABET ]\"\n");
+    std::printf("\t    Specify alternative alphabet to use for pw generation\n");
 }
