@@ -11,14 +11,16 @@ void PrintHelp();
 
 int main(int argc, char const* argv[])
 {
-    int i = 1;
     std::list<std::string> pws = GeneratePasswords(ALPHABET, 10, 10 * 10);
-    for (auto& pw : pws) {
+
+    int i = 1;
+    for (const auto& pw : pws) {
         std::cout << pw << " ";
         if (i++ % 5 == 0) {
             std::cout << "\n";
         }
     }
+
     return 0;
 }
 
