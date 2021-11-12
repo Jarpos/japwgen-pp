@@ -26,7 +26,7 @@ int main(int argc, char const* argv[])
 
 void PrintHelp()
 {
-    std::printf("Usage: japwgen-pp [ OPTIONS ] [ pwlen ] [ pwcount]\n");
+    std::printf("Usage: japwgen-pp [ OPTIONS ] [ pwlen ] [ pwcount ]\n");
     std::printf("\n");
     std::printf("Options:\n");
     std::printf("\t-h or --help\n");
