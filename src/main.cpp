@@ -7,6 +7,8 @@
 std::list<std::string> GeneratePasswords(std::string charset, size_t len, int count);
 std::string GeneratePassword(std::string charset, size_t pwlength);
 
+void PrintHelp();
+
 int main(int argc, char const* argv[])
 {
     int i = 1;
@@ -18,4 +20,9 @@ int main(int argc, char const* argv[])
         }
     }
     return 0;
+}
+
+void PrintHelp()
+{
+    std::printf("Usage: japwgen-pp [ OPTIONS ]");
 }
