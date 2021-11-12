@@ -3,14 +3,14 @@
 
 size_t GetRandNum();
 
-std::list<std::string> GeneratePasswords(std::string charset, size_t pwlength, int pwcount);
+std::list<std::string> GeneratePasswords(std::string charset, size_t len, int count);
 std::string GeneratePassword(std::string charset, size_t pwlength);
 
-std::list<std::string> GeneratePasswords(std::string charset, size_t pwlength, int pwcount)
+std::list<std::string> GeneratePasswords(std::string charset, size_t len, int count)
 {
     std::list<std::string> pwlist;
-    for (; pwcount > 0; pwcount--) {
-        pwlist.emplace_back(GeneratePassword(charset, pwlength));
+    for (; count > 0; count--) {
+        pwlist.emplace_back(GeneratePassword(charset, len));
     }
     return pwlist;
 }

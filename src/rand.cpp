@@ -5,15 +5,15 @@
 // this eventually, when the foundation for this project is good enough.
 size_t GetRandNum()
 {
-	size_t r;
-	std::ifstream ifs("/dev/random", std::ios::in);
-	if (!ifs.is_open()) {
-		throw new std::runtime_error("Couldn't open /dev/random");
-	}
+    size_t r;
+    std::ifstream ifs("/dev/random", std::ios::in);
+    if (!ifs.is_open()) {
+        throw new std::runtime_error("Couldn't open /dev/random");
+    }
 
-	ifs.read(reinterpret_cast<char*>(&r), sizeof(r));
-	if (ifs.fail()) {
-		throw new std::runtime_error("Couldn't read from /dev/random");
-	}
-	return r;
+    ifs.read(reinterpret_cast<char*>(&r), sizeof(r));
+    if (ifs.fail()) {
+        throw new std::runtime_error("Couldn't read from /dev/random");
+    }
+    return r;
 }
