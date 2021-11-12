@@ -18,12 +18,13 @@ set(cd ${psd})
 
 
 # Generate helper library
-#set(cd ${psd}/src/helpers)
-#set(helpers ${cd}/colors.cpp)
-#add_library(helpers "${helpers}")
+set(cd ${psd}/src)
+set(rand ${cd}/rand.cpp
+		 ${cd}/pwgen.cpp)
+add_library(rand "${rand}")
 
 # Generate executable with linkage to libraries
-set(libs )
+set(libs rand)
 
 add_executable(prog.out src/main.cpp)
 target_link_libraries(prog.out PUBLIC ${libs})
