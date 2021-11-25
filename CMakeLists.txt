@@ -6,8 +6,12 @@ project(jawb VERSION 0.0
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-    set(CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic \
-                         -Wno-unused-variable")
+    set(CMAKE_C_FLAGS "-Wall -Wextra -pedantic \
+                       -fsanitize=address -g -D_FORTIFY_SOURCE=2 \
+                       -D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector \
+                       -fstack-protector-all -g3 -pipe -D_REENTRANT")
+     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-unused-parameter -Wno-variadic-macros \
+                                         -Wno-unused-variable")
 endif()
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
