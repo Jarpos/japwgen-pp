@@ -11,7 +11,7 @@ void PrintHelp();
 
 int main(int argc, char const* argv[])
 {
-    std::list<std::string> pws = GeneratePasswords(ALPHABET, 10, 10 * 10);
+    std::list<std::string> pws = GeneratePasswords(ALPHABET, 10, 5 * 10);
 
     int i = 1;
     for (const auto& pw : pws) {
@@ -33,4 +33,6 @@ void PrintHelp()
     std::printf("\t    Displays this message\n");
     std::printf("\t--alphabet=\"[ ALPHABET ]\"\n");
     std::printf("\t    Specify alternative alphabet to use for pw generation\n");
+    std::printf("\t--count=[ NUMBER ]\n");
+    std::printf("\t    Specify amount of generated passwords\n");
 }
