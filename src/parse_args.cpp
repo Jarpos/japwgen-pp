@@ -5,16 +5,15 @@
 void ParseArgs(options& opts, int argc, const char* argv[])
 {
     for (int i = 1; i < argc; i++) {
-        if (argv[i] == std::string("--alphabet")) {
+        std::string arg = argv[i];
+
+        if (arg == "--alphabet") {
             opts.alphabet = argv[++i];
-
-        } else if (argv[i] == std::string("--count")) {
+        } else if (arg == "--count") {
             opts.pwcnt = std::stoi(argv[++i]);
-
-        } else if (argv[i] == std::string("--length")) {
+        } else if (arg == "--length") {
             opts.pwlen = std::stoi(argv[++i]);
-
-        } else if (argv[i] == std::string("--help")) {
+        } else if (arg == "--help") {
             opts.help = true;
         }
     }
