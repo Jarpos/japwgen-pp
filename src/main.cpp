@@ -39,7 +39,7 @@ void PrintHelp()
     std::printf("Usage: japwgen-pp [ OPTIONS ]\n");
     std::printf("\n");
     std::printf("Options:\n");
-    std::printf("\t-h or --help\n");
+    std::printf("\t--help\n");
     std::printf("\t    Displays this message\n");
     std::printf("\t--alphabet [ ALPHABET ]\n");
     std::printf("\t    Specify alternative alphabet to use for pw generation\n");
