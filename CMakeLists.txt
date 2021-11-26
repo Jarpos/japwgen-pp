@@ -24,7 +24,8 @@ set(cd ${psd})
 # Generate helper library
 set(cd ${psd}/src)
 set(rand ${cd}/rand.cpp
-		 ${cd}/pwgen.cpp)
+		 ${cd}/pwgen.cpp
+         ${cd}/parse_args.cpp)
 add_library(rand "${rand}")
 
 # Generate executable with linkage to libraries
