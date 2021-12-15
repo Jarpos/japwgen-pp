@@ -5,7 +5,6 @@
 #include <string>
 
 std::list<std::string> GeneratePasswords(std::string charset, size_t len, int count);
-std::string GeneratePassword(std::string charset, size_t pwlength);
 void ParseArgs(options& opts, int argc, const char* argv[]);
 
 void PrintHelp();
