@@ -8,7 +8,7 @@
 std::list<std::string> GeneratePasswords(std::string charset, size_t len, int count);
 void ParseArgs(options& opts, int argc, const char* argv[]);
 
-void PrintHelp(const std::string& progname);
+void PrintHelp(const char* progname);
 
 int main(int argc, char const* argv[])
 {
@@ -17,7 +17,7 @@ int main(int argc, char const* argv[])
         ParseArgs(opts, argc, argv);
         if (opts.help) {
             auto p = std::filesystem::path(argv[0]);
-            PrintHelp(p.stem().string());
+            PrintHelp(p.stem().c_str());
             return EXIT_SUCCESS;
         }
     }
@@ -35,22 +35,22 @@ int main(int argc, char const* argv[])
     return EXIT_SUCCESS;
 }
 
-void PrintHelp(const std::string& progname)
+void PrintHelp(const char* progname)
 {
     const options o; // Use default values for example
-    std::printf("Usage: %s [ OPTIONS ]\n", progname.c_str());
-    std::printf("Example: %s ", progname.c_str());
+    std::printf("Usage: %s [ OPTIONS ]\n", progname);
+    std::printf("Example: %s ", progname);
     std::printf("-c %d -l %d ", o.pwcnt, o.pwlen);
     std::printf("--alphabet %s\n", o.alphabet.c_str());
     std::printf("\n");
 
     std::printf("Options:\n");
-    std::printf("\t-h|--help\n");
-    std::printf("\t   Displays this message\n");
-    std::printf("\t-a|--alphabet [ ALPHABET ]\n");
-    std::printf("\t   Specify alternative alphabet to use for pw generation\n");
-    std::printf("\t-c|--count [ NUMBER ]\n");
-    std::printf("\t   Specify amount of generated passwords\n");
-    std::printf("\t-l|--length [ NUMBER ]\n");
-    std::printf("\t   Specify length of each generated password\n");
+    std::printf("    -h|--help\n");
+    std::printf("      Displays this message\n");
+    std::printf("    -a|--alphabet [ ALPHABET ]\n");
+    std::printf("      Specify alternative alphabet to use for pw generation\n");
+    std::printf("    -c|--count [ NUMBER ]\n");
+    std::printf("      Specify amount of generated passwords\n");
+    std::printf("    -l|--length [ NUMBER ]\n");
+    std::printf("      Specify length of each generated password\n");
 }
