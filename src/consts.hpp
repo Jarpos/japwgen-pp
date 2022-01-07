@@ -7,8 +7,8 @@ inline constexpr char ALPHABET[] =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
 inline constexpr int BREAK_AFTER = 5;
-inline constexpr int STD_PWCOUNT = 5 * 5;
-inline constexpr int STD_PWLENGTH = 10;
+inline constexpr int STD_PWCOUNT = BREAK_AFTER * 10;
+inline constexpr int STD_PWLENGTH = 16;
 
 struct options {
     std::string alphabet = ALPHABET;
