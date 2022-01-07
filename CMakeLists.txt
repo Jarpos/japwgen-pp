@@ -31,5 +31,5 @@ add_library(rand "${rand}")
 # Generate executable with linkage to libraries
 set(libs rand)
 
-add_executable(prog.out src/main.cpp)
-target_link_libraries(prog.out PUBLIC ${libs})
+add_executable(japwgen src/main.cpp)
+target_link_libraries(japwgen PUBLIC ${libs})
