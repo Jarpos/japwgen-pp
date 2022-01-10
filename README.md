@@ -7,3 +7,6 @@ such use cases.
 # todo
  - [ ] Add support for Windows Platforms
  - [ ] Add more command line options
+ - [ ] Add Option to use word lists
+ - [ ] Add support for POSIX-REGEX style character classes
+ - [ ] Add decent error handling
