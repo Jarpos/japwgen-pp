@@ -12,13 +12,13 @@ void ParseArgs(options& opts, int argc, const char* argv[])
     for (int i = 1; i < argc; i++) {
         SetOption(arg, argv, argc, i);
 
-        if (arg == "--alphabet" || arg == "-a") {
+        /****/ if (arg == "-a" || arg == "--alphabet") {
             SetOption(opts.alphabet, argv, argc, ++i);
-        } else if (arg == "--count" || arg == "-c") {
+        } else if (arg == "-c" || arg == "--count") {
             SetOption(opts.pwcnt, argv, argc, ++i);
-        } else if (arg == "--length" || arg == "-l") {
+        } else if (arg == "-l" || arg == "--length") {
             SetOption(opts.pwlen, argv, argc, ++i);
-        } else if (arg == "--help" || arg == "-h") {
+        } else if (arg == "-h" || arg == "--help") {
             opts.help = true;
         }
     }
