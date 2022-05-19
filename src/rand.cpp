@@ -8,7 +8,7 @@ size_t GetRandNum()
     size_t r;
 
 #if defined(__unix) || defined(__unix__) || defined(linux)
-    std::ifstream ifs("/dev/random", std::ios::in);
+    static std::ifstream ifs("/dev/random", std::ios::in);
     if (!ifs.is_open()) {
         throw new std::runtime_error("Couldn't open /dev/random");
     }
