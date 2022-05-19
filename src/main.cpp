@@ -22,7 +22,7 @@ int main(int argc, char const* argv[])
         }
     }
 
-    std::list<std::string> pws = GeneratePasswords(opts.alphabet, opts.pwlen, opts.pwcnt);
+    const auto pws = GeneratePasswords(opts.alphabet, opts.pwlen, opts.pwcnt);
 
     int i = 1;
     for (const auto& pw : pws) {
