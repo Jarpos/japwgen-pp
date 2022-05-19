@@ -10,7 +10,7 @@ std::list<std::string> GeneratePasswords(const std::string& charset, size_t len,
 {
     std::list<std::string> passwords;
     for (; count > 0; count--) {
-        passwords.emplace_back(GeneratePassword(charset, len));
+        passwords.emplace_front(GeneratePassword(charset, len));
     }
     return passwords;
 }
