@@ -3,6 +3,8 @@
 #include <string>
 #include <system_error>
 
+std::string parse_alphabet(const std::string& inarg);
+
 void SetOption(int& option, const char* argv[], int argc, int i);
 void SetOption(std::string& option, const char* argv[], int argc, int i);
 
@@ -14,6 +16,7 @@ void ParseArgs(options& opts, int argc, const char* argv[])
 
         /****/ if (arg == "-a" || arg == "--alphabet") {
             SetOption(opts.alphabet, argv, argc, ++i);
+            opts.alphabet = parse_alphabet(opts.alphabet);
         } else if (arg == "-c" || arg == "--count") {
             SetOption(opts.pwcnt, argv, argc, ++i);
         } else if (arg == "-l" || arg == "--length") {

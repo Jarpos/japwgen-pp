@@ -25,6 +25,7 @@ set(cd ${psd})
 set(cd ${psd}/src)
 set(rand ${cd}/rand.cpp
 		 ${cd}/pwgen.cpp
+		 ${cd}/parse_alphabet.cpp
          ${cd}/parse_args.cpp)
 add_library(rand "${rand}")
 
