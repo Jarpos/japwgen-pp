@@ -3,7 +3,7 @@
 #include <string>
 #include <system_error>
 
-std::string parse_alphabet(const std::string& inarg);
+std::string parse_alphabet(const std::string& in);
 
 void SetOption(int& option, const char* argv[], int argc, int i);
 void SetOption(std::string& option, const char* argv[], int argc, int i);
