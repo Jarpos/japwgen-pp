@@ -6,25 +6,30 @@ inline constexpr char LOWER_ALPH[] = "abcdefghijklmnopqrstuvwxyz";
 
 std::string parse_alphabet(const std::string& in)
 {
-    std::string outalph;
+    std::string out;
     for (int i = 0; i < in.length(); i++) {
         switch (in[i]) {
         case '[': {
-            if /**/ (in[i + 1] == 'a') outalph += LOWER_ALPH;
-            else if (in[i + 1] == 'A') outalph += UPPER_ALPH;
-            i++;
-            continue;
+            if /**/ (in[i + 1] == 'a' && in[i + 2] == ']')
+                out += LOWER_ALPH;
+            else if (in[i + 1] == 'A' && in[i + 2] == ']')
+                out += UPPER_ALPH;
+            else
+                out += in[i + 1];
+
+            i += 2;
+            break;
         }
 
         case '\\': {
-            outalph += in[i + 1];
+            out += in[i + 1];
             i++;
-            continue;
+            break;
         }
 
-        default: outalph += in[i]; continue;
+        default: out += in[i]; break;
         }
     }
 
-    return outalph;
+    return out;
 }
