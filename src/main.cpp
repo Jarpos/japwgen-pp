@@ -8,7 +8,7 @@
 std::list<std::string> GeneratePasswords(const std::string& charset, size_t len, int count);
 void ParseArgs(options& opts, int argc, const char* argv[]);
 
-void PrintHelp(const char* progname);
+void PrintHelp(const std::string& progname);
 
 int main(int argc, char const* argv[])
 {
@@ -17,7 +17,7 @@ int main(int argc, char const* argv[])
         ParseArgs(opts, argc, argv);
         if (opts.help) {
             auto p = std::filesystem::path(argv[0]);
-            PrintHelp(p.stem().c_str());
+            PrintHelp(p.stem().generic_string());
             return EXIT_SUCCESS;
         }
     }
@@ -36,11 +36,11 @@ int main(int argc, char const* argv[])
     return EXIT_SUCCESS;
 }
 
-void PrintHelp(const char* progname)
+void PrintHelp(const std::string& progname)
 {
     const options o; // Use default values for example
-    std::printf("Usage: %s [ OPTIONS ]\n", progname);
-    std::printf("Example: %s ", progname);
+    std::printf("Usage: %s [ OPTIONS ]\n", progname.c_str());
+    std::printf("Example: %s ", progname.c_str());
     std::printf("-c %d -l %d ", o.pwcnt, o.pwlen);
     std::printf("--alphabet %s\n", o.alphabet.c_str());
     std::printf("\n");

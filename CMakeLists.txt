@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1...3.10)
 
-project(jawb VERSION 0.0
+project(japwgen-pp VERSION 0.0
         DESCRIPTION "Just Another PWGen - PlusPlus")
 
 set(CMAKE_CXX_STANDARD 20)

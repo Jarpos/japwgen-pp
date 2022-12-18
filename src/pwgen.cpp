@@ -1,7 +1,7 @@
 #include <list>
 #include <string>
 
-size_t GetRandNum();
+unsigned int GetRandNum();
 
 std::list<std::string> GeneratePasswords(const std::string& charset, size_t len, int count);
 std::string GeneratePassword(const std::string& charset, size_t pwlength);
