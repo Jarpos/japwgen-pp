@@ -22,6 +22,7 @@ int main(int argc, char const* argv[])
         }
     }
 
+    std::cout << "Used alphabet: " << opts.alphabet << std::endl;
     const auto pws = GeneratePasswords(opts.alphabet, opts.pwlen, opts.pwcnt);
 
     int i = 1;
